@@ -1,0 +1,22 @@
+<div class="full-width full-height scrollable-flex">
+  <div soho-wizard (afteractivated)="onActivated($event)">
+    <div soho-wizard-header>
+      <a soho-wizard-tick tickId="user-details" current="true">User Details</a>
+      <a soho-wizard-tick tickId="role-assignments">Role Assignments</a>
+      <a soho-wizard-tick tickId="summary">Summary</a>
+    </div>
+    <div soho-wizard-pages>
+      <div soho-wizard-page tickId="user-details">
+          <approva-os-user-details></approva-os-user-details>
+      </div>
+      <div soho-wizard-page tickId="role-assignments">
+          <approva-os-role-assignments></approva-os-role-assignments>
+      </div>
+      <div soho-wizard-page tickId="summary" class="complete">
+          <approva-os-user-summary></approva-os-user-summary>
+      </div>
+    </div>
+    <div soho-wizard-buttonbar [buttons]="buttons">
+    </div>
+  </div>
+</div>

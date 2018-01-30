@@ -1,0 +1,50 @@
+<fieldset>
+  <legend>New Roles to be assigned</legend>
+</fieldset>
+<div class="form-responsive row">
+  <div class="one-third column">
+    <div class="field">
+      <label class="label" for="role-select">Roles
+        <span class="audible">Select Role</span>
+      </label>
+      <span class="lookup-wrapper">
+        <input name="role-select" class="lookup" id="role-select" type="text" data-init="false"><span tabindex="-1" class="trigger"><svg xmlns="http://www.w3.org/2000/svg" class="icon" role="presentation" aria-hidden="true" focusable="false"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search-list" /></svg>
+        </span>
+      </span>
+    </div>
+  </div>
+  <div class="one-third column">
+    <div class="field">
+      <label class="label" for="assign-roles-another-user">Assign Roles as Another User
+        <span class="audible">Assign Roles as Another User</span>
+      </label>
+      <span class="lookup-wrapper">
+        <input name="assign-roles-another-user" class="lookup" id="assign-roles-another-user" type="text" data-init="false"><span tabindex="-1" class="trigger"><svg xmlns="http://www.w3.org/2000/svg" class="icon" role="presentation" aria-hidden="true" focusable="false"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-search-list" /></svg>
+        </span>
+      </span>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="twelve columns" role="main">
+    <div soho-datagrid [columns]="columns" [data]="data" [paging]="true" [pagesize]="10">
+    </div>
+  </div>
+</div>
+<fieldset>
+  <legend>More Details</legend>
+</fieldset>
+<div class="form-responsive row">
+  <div class="one-third column">
+    <div class="field">
+      <span class="label">Approval Process Template</span>
+      <span class="data">Infor Template for User Creation</span>
+    </div>
+    <div class="field">
+      <label class="label" for="comments">Comments
+        <span class="audible">Comments</span>
+      </label>
+      <textarea name="comments" class="textarea resizable" id="comments" placeholder="Type your notes here...">Type your notes here...</textarea>
+    </div>
+  </div>
+</div>

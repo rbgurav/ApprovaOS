@@ -1,0 +1,22 @@
+<div class="accordion panel inverse" data-options="{'allowOnePane': true, rerouteOnLinkClick: false}">
+  <div class="accordion-header hide-focus is-focused" role="presentation">
+    <svg class="icon" focusable="false" aria-hidden="true" role="presentation">
+      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-home"></use>
+    </svg>
+    <a href="/">
+      <span>Home Page</span>
+    </a>
+  </div>
+  <div class="accordion-header" routerLinkActive="is-selected" *ngFor="let navItem of mainMenuItems">
+    <a href="javascript:void(0);">
+      <span>{{navItem.menu}}</span>
+    </a>
+  </div>
+  <div class="accordion-pane">
+    <div class="accordion-header list-item" *ngFor="let navSubItem of mainMenuItems[0].subMenu">
+      <a [routerLink]="[navSubItem.path]">
+        <span>{{navSubItem.title}}</span>
+      </a>
+    </div>
+  </div>
+</div>

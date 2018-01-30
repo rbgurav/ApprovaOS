@@ -1,0 +1,19 @@
+<div class="full-width">
+    <div class="row">
+        <div class="twelve columns">
+          <button-set>
+            <button soho-button="icon" icon="delete">Delete</button>
+            <button soho-button="icon" icon="check">Approve</button>
+            <button soho-button="icon" icon="close">Deny</button>
+          </button-set>
+        </div>
+      </div>
+
+     <div class="row">
+        <div class="twelve columns" role="main">
+          <div soho-datagrid [columns]="columns" [data]="data" [paging]="true" [pagesize]="10">
+          </div>
+        </div>
+      </div>
+
+    </div>

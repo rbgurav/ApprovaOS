@@ -1,0 +1,204 @@
+<div class="full-width">
+  <div class="row">
+    <div class="full column">
+      <button-set>
+        <button soho-button="icon" icon="save">Save</button>
+        <button soho-button="icon" icon="delete">Delete</button>
+        <button soho-button="icon" icon="close">Deny</button>
+        <button soho-button="icon" icon="edit">Edit</button>
+      </button-set>
+    </div>
+  </div>
+  <div class="row">
+    <div class="full column">
+      <soho-accordion>
+        <soho-accordion-header>Request Details</soho-accordion-header>
+        <soho-accordion-pane>
+          <div class="form-responsive top-padding">
+            <div class="one-third column">
+              <div class="field">
+                <label for="request-for-user">Request For User</label>
+                <input name="request-for-user" id="request-for-user" type="text" placeholder="Sam D">
+              </div>
+              <div class="field">
+                <label for="application-instance" class="label">Application Instance</label>
+                <select soho-dropdown name="application-instance" multiple [closeOnSelect]="false" maxSelected="3" [(ngModel)]="model.multi">
+                  <option value="AL">Alabama</option>
+                  <option value="CA">California</option>
+                  <option value="DE">Delaware</option>
+                  <option value="NY">New York</option>
+                  <option value="WY">Wyoming</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="request-type">Request Type</label>
+                <input name="request-type" id="request-type" type="text" placeholder="User Creation">
+              </div>
+              <div class="field">
+                <a class="hyperlink hide-focus" href="">details</a>
+              </div>
+            </div>
+            <div class="one-third column">
+              <div class="field">
+                <label for="submitted-by">Submitted by</label>
+                <input name="submitted-by" id="submitted-by" type="text" disabled placeholder="John C">
+              </div>
+              <div class="field">
+                <label for="parent-request-id">Parent Request ID</label>
+                <input name="parent-request-id" id="parent-request-id" type="text" placeholder="0001">
+              </div>
+              <div class="field">
+                <label for="request-age">Age</label>
+                <input name="request-age" id="request-age" type="text" placeholder="1 week">
+              </div>
+            </div>
+          </div>
+
+        </soho-accordion-pane>
+        <soho-accordion-header>Violation Chart</soho-accordion-header>
+        <soho-accordion-pane>
+          <div class="row">
+            <div class="one-third column">Chart will come here</div>
+            <div class="one-third column">
+              <div class="field">
+                <span class="label">Violating Rules</span>
+                <span class="data">2</span>
+              </div>
+            </div>
+          </div>
+        </soho-accordion-pane>
+
+        <soho-accordion-header>Violating Objects</soho-accordion-header>
+        <soho-accordion-pane>
+          <div soho-tabs (activated)="onTabActivated($event)">
+            <div soho-tab-list-container>
+              <ul soho-tab-list>
+                <li soho-tab selected="true">
+                  <a soho-tab-title tabId="roles-selected-connection">Roles from Selected Connection</a>
+                </li>
+                <li soho-tab>
+                  <a soho-tab-title tabId="responsibilities-selected-connection">Responsibilities from Selected Connection</a>
+                </li>
+                <li soho-tab>
+                  <a soho-tab-title tabId="responsibilities-selected-connection">Roles / Responsibilities from Other Connection</a>
+                </li>
+                <li soho-tab>
+                  <a soho-tab-title tabId="responsibilities-selected-connection">Roles / Responsibilities with Exisiting Violations</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div soho-tab-panel-container>
+            <div soho-tab-panel tabId="roles-selected-connection">
+              <div class="">
+                <div soho-tabs vertical="true" (activated)="onTabActivated($event)">
+                  <div soho-tab-list-container [verticalScrolling]="true">
+                    <ul soho-tab-list>
+                      <li soho-tab>
+                        <a soho-tab-title tabId="tabs-vertical-role1">Role1</a>
+                      </li>
+                      <li soho-tab>
+                        <a soho-tab-title tabId="tabs-vertical-role2">Role2</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div soho-tab-panel-container [verticalScrolling]="true">
+                  <div soho-tab-panel tabId="tabs-vertical-role1">
+                    <div class="row">
+                      <div class="one-third column">
+                        <div class="field">
+                          <span class="label">Role Description</span>
+                          <span class="data">Infor Template for User Creation</span>
+                        </div>
+                      </div>
+                      <div class="one-third column">
+                        <div class="field">
+                          <span class="label">Application Instance</span>
+                          <span class="data">Infor </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="full column">
+                        <button-set>
+                          <button soho-button="icon" icon="checkbox">Mitigate</button>
+                        </button-set>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="twelve columns" role="main">
+                        <div soho-datagrid [columns]="columns" [data]="data" [paging]="true" [pagesize]="10">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="twelve columns">
+                        <button-set>
+                          <button soho-button class="btn-secondary">Revoke Role</button>
+                        </button-set>
+                      </div>
+                    </div>
+                  </div>
+                  <div soho-tab-panel tabId="tabs-vertical-role2">
+                    <div class="row">
+                      <div class="one-third column">
+                        <div class="field">
+                          <span class="label">Role Description</span>
+                          <span class="data">Infor Template for User Creation</span>
+                        </div>
+                      </div>
+                      <div class="one-third column">
+                        <div class="field">
+                          <span class="label">Application Instance</span>
+                          <span class="data">Infor </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="full column">
+                        <button-set>
+                          <button soho-button="icon" icon="checkbox">Mitigate</button>
+                        </button-set>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="twelve columns" role="main">
+                        <div soho-datagrid [columns]="columns" [data]="data" [paging]="true" [pagesize]="10">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="twelve columns">
+                        <button-set>
+                          <button soho-button class="btn-secondary">Revoke Rule</button>
+                        </button-set>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div soho-tab-panel-container>
+                <div soho-tab-panel tabId="responsibilities-selected-connection">
+                </div>
+              </div>
+            </div>
+          </div>
+        </soho-accordion-pane>
+        <soho-accordion-header>Other Details</soho-accordion-header>
+        <soho-accordion-pane>
+          <div class="row">
+            <div class="twelve columns">
+              <div class="field">
+                <label for="readonly" class="label">Comments</label>
+                <textarea soho-textarea name="readonly" class="full-width" [readonly]="true" [(ngModel)]="model.readonlyText"></textarea>
+              </div>
+            </div>
+          </div>
+        </soho-accordion-pane>
+      </soho-accordion>
+
+    </div>
+  </div>
+
+</div>

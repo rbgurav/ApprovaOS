@@ -1,0 +1,16 @@
+<a href="#maincontent" class="skip-link" data-translate="text">SkipToMain</a>
+<soho-icons></soho-icons>
+<soho-icons-ext></soho-icons-ext>
+<soho-icons-empty></soho-icons-empty>
+<!-- <approva-os-masthead></approva-os-masthead> -->
+<nav soho-application-menu class="application-menu is-open is-pesonalizable" [openOnLarge]="true">
+  <application-menu></application-menu>
+</nav>
+<div class="page-container no-scroll">
+  <approva-os-header></approva-os-header>
+  <div id="maincontent" class="page-container scrollable" role="main">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div soho-personalize [options]="personalizeOptions" (changetheme)="onChangeTheme($event)" (changecolors)="onChangeColors($event)"></div>
